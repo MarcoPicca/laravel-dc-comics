@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () { return view('layouts.app'); });
 
-// Route::resource('comics', GuestComicController::class);
+Route::resource('comics', GuestComicController::class);
 
-Route::get('/comics', [GuestComicController::class, 'index'])->name('guest.comics.index');
-Route::get('/comics/{comic}', [GuestComicController::class, 'show'])->name('guest.comics.show');
+// Route::get('/comics', [GuestComicController::class, 'index'])->name('guest.comics.index');
+// Route::get('/comics/{comic}', [GuestComicController::class, 'show'])->name('guest.comics.show');
