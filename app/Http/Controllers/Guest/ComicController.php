@@ -19,4 +19,30 @@ class ComicController extends Controller
         // $comic = Comic::findOrFail($id);
         return view('guest.comics.show', compact('comic'));
     }
+
+    public function create()
+    {
+        return view('guest.comics.create');
+    }
+
+    public function store(Request $request)
+    {
+        $formData = $request->all();
+
+        $newComic = new Comic();
+        $newComic->title = $formData['title'];
+        $newComic->description = $formData['description'];
+        $newComic->thumb = $formData['thumb'];
+        $newComic->price = $formData['price'];
+        $newComic->series = $formData['series'];
+        $newComic->sale_date = $formData['sale_date'];
+        $newComic->type = $formData['type'];
+        $newComic->artists = $formData['artists'];
+        $newComic->writers = $formData['writers'];
+        $newComic->save();
+
+        // $newComic = Comic::create($formData);
+
+        return redirect()->route('guest.comics.show', $newComic->id);
+    }
 }
