@@ -11,25 +11,37 @@
                                 {{ $comic->title }}
                             </h1>
                             <p>
-                                Tipo: {{ $comic->title }}
+                                Descrizione: {{ $comic->description }}
                             </p>
                             <p>
-                                Cottura: {{ $comic->title }}
+                                Prezzo: {{ $comic->price }}
                             </p>
                             <p>
-                                Cottura: {{ $comic->title }}
+                                Serie: {{ $comic->series }}
+                            </p>
+                            <p>
+                                Data: {{ $comic->sale_date }}
+                            </p>
+                            <p>
+                                Genere: {{ $comic->type }}
+                            </p>
+                            <p>
+                                Artisti: {{ $comic->artists }}
+                            </p>
+                            <p>
+                                Scrittori: {{ $comic->writers }}
                             </p>
 
                             <div class="card-image">
                                 <img class="w-50" src="{{  $comic->thumb }}" alt="{{ $comic->title }} ">
                             </div>
-                            <div class="card-body">
-                                <h2>
-                                    Descrizione
-                                </h2>
-                                <p>
-                                    {{ $comic->title }}
-                                </p>
+                            
+                            <div class="actions mb-3 pt-3">
+                                <a href="{{ route('guest.comics.edit', $comic->id) }}">
+                                    <button class="btn btn-success">
+                                        Modifica questo fumetto
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
